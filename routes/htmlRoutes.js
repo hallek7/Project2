@@ -3,7 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    // db.Example.findAll({})
+    let findAll = new Promise(function(resolve, reject) {
+      const examples = [1, 2, 3, 4, 5]
+      resolve(examples)
+    })
+    findAll.then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
