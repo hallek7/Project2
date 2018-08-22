@@ -1,8 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
+<<<<<<< HEAD
     project_name: DataTypes.STRING,
     client_name: DataTypes.STRING,
     task: DataTypes.INTEGER
+=======
+    name: DataTypes.STRING,
+    body: DataTypes.TEXT,
+    task_date: DataTypes.DATE,
+    task_email: DataTypes.STRING
+>>>>>>> b1e2d78e85b8dce05d259ce4715707a9190b2c35
   });
   return Task;
 };

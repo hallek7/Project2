@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "database": "taskdb",
+=======
+    "database": "task",
+>>>>>>> b1e2d78e85b8dce05d259ce4715707a9190b2c35
     "host": "localhost",
     "dialect": "mysql"
   },
