@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .timeline {
     list-style: none;
     padding: 20px 0 20px;
@@ -295,4 +296,11 @@ label {
     display: inline-block;
     text-align: right;
     width: 20%;
+=======
+ 
+  
+body, html { 
+  background-color: #C6D7B1;
+  font-family: 'Open Sans', sans-serif;
+>>>>>>> dd1bd6d2d6748aeeae0bbb601242ff4569d6c1bf
 }
