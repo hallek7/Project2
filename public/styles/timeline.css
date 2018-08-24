@@ -1,5 +1,9 @@
 body {
+<<<<<<< HEAD
   background-color: lightblue;
+=======
+  background-color: white;
+>>>>>>> 568c9e4d0c468144ce9caf3cb4261f7bdfdf5c05
   font-family: 'Abel', sans-serif;
 }
 
@@ -83,6 +87,7 @@ h4 {
   float: left;
   clear: left;
   /* background-color:white;  */
+  background-color: white; 
 }
 .timeline > li:before,
 .timeline > li:after {
