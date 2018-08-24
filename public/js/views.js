@@ -27,9 +27,13 @@ $(document).ready(function() {
       type: "POST",
       url: "api/data",
       data: JSON.stringify(signup)
-    });
+    }).then(data =>{
+      console.log(data)
+      alert(JSON.stringify(data));
 
-    alert('it worked');
+    })
+    ;
+
   });
 
   //Assigning variables to button id
@@ -188,5 +192,5 @@ var input = document.getElementById("project5")
 
 });
 
-});
+
 

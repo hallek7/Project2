@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     
     project_name:{
       type: DataTypes.STRING,
-      allowNull: false
+      
     },
     task: {
       type: DataTypes.INTEGER,
