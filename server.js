@@ -13,11 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-<<<<<<< HEAD
 // app.set('home.html',{'root': __dirname + '/public'});
 // app.set('view engine', 'home.html');
-=======
->>>>>>> b1e2d78e85b8dce05d259ce4715707a9190b2c35
 // // Handlebars
 // app.engine(
 //   "handlebars",

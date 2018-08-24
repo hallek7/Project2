@@ -1,41 +1,88 @@
+
 $(document).ready(function() {
-  // handleFormSubmit is called whenever we submit a new example
-  // Save the new example to the db and refresh the list
-  var handleFormSubmit = function(event) {
-    event.preventDefault();
+
+  //Assigning variables to button id
+  var $signupBtn = $("#signup");
+  var $loginBtn = $("#login");
+  
+  //setting up on click events
+  $signupBtn.on("click", () => {
+    
+    var $newClientEmail = $("#newClientEmail");
+    var $newClientPassword = $("#newClientPassword");
 
     var signup = {
       email: $newClientEmail.val().trim(),
       passkey: $newClientPassword.val().trim()
     };
-
+  // validation for passkey and email 
     if (!(signup.email && signup.passkey)) {
       alert("You must enter valid information!");
-      return;
     }
+  //passing ajax to server
+    $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/data",
+      data: JSON.stringify(signup)
+    });
 
-    var $signupBtn = $("#signupBtn");
-    // Add event listeners to the submit and delete buttons
-    $signupBtn.on("click", handleFormSubmit);
+    alert('it worked');
+  });
 
-    var $newClientEmail = $("#newClientEmail");
-    var $newClientPassword = $("#newClientPassword");
+  //Assigning variables to button id
+    var $loginBtn = $("#login");
 
-    var saveclient = function(email,passkey) {
-      var client = {
-        email: "",
-        passkey: ""
+  //setting up on click events
+    $loginBtn.on("click",() => {
+      var $clientEmail = $("#clientEmail");
+      var $clientPassword = $("#clientPassword");
+
+      var login ={
+        email: $clientEmail.val().trim(),
+        passkey:$clientPassword.val().trim()
       };
-      return $.ajax({
+      // validation for passkey and email 
+    if (!(login.email && login.passkey)) {
+      alert("You must enter valid information!");
+    }
+      console.log(login);
+
+      $.ajax({
         headers: {
           "Content-Type": "application/json"
         },
         type: "POST",
-        url: "api/client",
-        data: JSON.stringify(client)
+        url: "api/login",
+        data: JSON.stringify(login)
+      }).then((results) => {
+        console.log(results);
       });
-    };
 
-    saveclient();
-  };
+    });
+
+
+     $('form').submit(function() {
+       if ($('.input').val() !== '') {
+           var newTask = $('.input').val();
+           var newLi = $('<li>' + newTask + '</li>');
+         
+           $('.body').prepend(newLi); // To put the new task at the top of the list
+           $('.input').val('');
+           return false; // So the change persists
+       }
+   });
+   // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
+
+
+    $(".project_submit").click(function(){
+      var projectName = $(".project_one").val();
+      var input = document.getElementsByClassName("project_one")
+          $(".timeline-heading").append(projectName);
+          $(".project_one").remove()
+    })
+
 });
+

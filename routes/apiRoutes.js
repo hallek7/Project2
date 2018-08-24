@@ -1,8 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-
-  app.post("/data", function(req, res) {
+  app.post("/api/data", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
@@ -12,12 +11,38 @@ module.exports = function(app) {
         passkey: req.body.passkey
       })
       .then(function(dbClient) {
-      // We have access to the new todo as an argument inside of the callback function
+        // We have access to the new todo as an argument inside of the callback function
         res.json(dbClient);
       })
       .catch(function(err) {
-      // Whenever a validation or flag fails, an error is thrown
-      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        // Whenever a validation or flag fails, an error is thrown
+        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+  });
+
+  app.post("/api/login", function(req, res) {
+    console.log(JSON.stringify(req.body));
+    db.client
+      .findAll({
+        where: {
+          email: req.body.email,
+          passkey: req.body.passkey
+        }
+      })
+      .then(function(dbClient) {
+        //if length of dbclient == 1 {
+        //we found user in db
+        // }
+        // else {no match}
+        //   console.log(dbClient.length);
+        //   console.log(dbClient);
+        // // We have access to the new todo as an argument inside of the callback function
+        //   res.json(dbClient);
+      })
+      .catch(function(err) {
+        // Whenever a validation or flag fails, an error is thrown
+        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
   });
