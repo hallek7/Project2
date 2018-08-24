@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../public/styles/styles.css" />
+<link rel="stylesheet" href="../public/styles/timeline.css" />
 
 
 
@@ -17,81 +17,85 @@
                   <p></p>
                 </div>
 
-        <button class="new_project">Create New Project</button>
+        <button class="buttons">Create New Project</button>
 
 
         <ul class="timeline">
-            <li>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Project Name: <input type="text" name="project" size="35"></h4>
-                    </div>
-                    
-                    <div class="timeline-body">
-                        <div id="container">
-                            
+                <li>
+                        <div class="timeline-badge">
+                            <a><i class="fa fa-circle" id=""></i></a>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Project Name:
+                                </h4>
+                                <div id="input1" class="inputs"><input type="text" name="project" size="35" id="project1" class="projects">
+                                </div>
+                                <div id="space1"> <button id="submit1" class="submits">Submit Name</button></div>
+                            </div> <br><br><br><br><br> 
+                            <div class="timeline-body">
+                                <form id="form1">
+                                    <label>Enter task:</label>
+                                    <input id="input1b" class="input" type="text">
+                                    <input type="submit" value="Add">
+                                </form>
+                                <ul id= "body1" class="body">
+                                 
+                                </ul>
+                            </div>
+                            <div class="timeline-footer">
+                                <fieldset>
+                                    <!-- <legend>Start and End date of project</legend> -->
                                 
-                          <form>
-                            <label>Enter task:</label>
-                            <input class="input" type="text">
-                            <input type="submit" value="Add">
-                        </form>
-                        <ul class="body">
-                         
-                        </ul>
-                          
+                                    <div>
+                                        <label for="end">Deadline</label>
+                                        <input type="date" id="end" name="trip"
+                                             
+                                               min="2018-01-01" max=""/ >
+                                    </div>
+                                
+                                </fieldset>
                             </div>
-                    </div>
-                    <div class="timeline-footer">
-                        <fieldset>
-                            <!-- <legend>Start and End date of project</legend> -->
-                        
-                            <div>
-                                <label for="end">Deadline</label>
-                                <input type="date" id="end" name="trip"
-                                     
-                                       min="2018-01-01" max=""/ >
-                            </div>
-                        
-                        </fieldset>
-                        
-                    </div>
-                </div> 
-            </li>
+                        </div>
+                    </li>
             
             <li class="timeline-inverted">
                 <div class="timeline-badge">
                     <a><i class="fa fa-circle invert" id=""></i></a>
                 </div>
                 <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Project Name: <input type="text" name="project" size="35"></h4>
-                    </div>
-                    <div class="timeline-body">
-                        <form>
-                            <label>Enter task:</label>
-                            <input class="input" type="text">
-                            <input type="submit" value="Add">
-                        </form>
-                        <ul class="body">
-                         
-                        </ul>
-                    </div>
-                    <div class="timeline-footer">
-                        <fieldset>
-                            <!-- <legend>Start and End date of project</legend> -->
-                        
-                            <div>
-                                <label for="end">Deadline</label>
-                                <input type="date" id="end" name="trip"
-                                     
-                                       min="2018-01-01" max=""/ >
+                        <div class="timeline-heading">
+                            <h4>Project Name:
+                            </h4>
+                            <div id="input2" class="inputs"><input type="text" name="project" size="35" id="project2" class="projects">
                             </div>
-                        
-                        </fieldset>
+                            <div id="space2"> <button id="submit2" class="submits">Submit Name</button></div>
+                        </div> <br><br><br><br><br> 
+                        <div class="timeline-body">
+                            <form id="form2">
+                                <label>Enter task:</label>
+                                <input id= "input2b" class="input" type="text">
+                                <input type="submit" value="Add">
+                            </form>
+                            <ul id="body2" class="body">
+                             
+                            </ul>
+                        </div>
+                        <div class="timeline-footer">
+                            <fieldset>
+                                <!-- <legend>Start and End date of project</legend> -->
+                            
+                                <div>
+                                    <label for="end">Deadline</label>
+                                    <input type="date" id="end" name="trip"
+                                         
+                                           min="2018-01-01" max=""/ >
+                                </div>
+                            
+                            </fieldset>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
             
             <li>
                 <div class="timeline-badge">
@@ -101,17 +105,17 @@
                     <div class="timeline-heading">
                         <h4>Project Name:
                         </h4>
-                        <div id="input_space"><input type="text" name="project" size="35" class="project_one">
+                        <div id="input3" class="inputs"><input type="text" name="project" size="35" id="project3" class="projects">
                         </div>
-                        <button class="project_submit" onclick="submitProject()">Submit Name</button>
-                    </div>
+                        <div id="space3"> <button id="submit3" class="submits">Submit Name</button></div>
+                    </div> <br> <br> <br><br><br>
                     <div class="timeline-body">
-                        <form>
+                        <form id="form3">
                             <label>Enter task:</label>
-                            <input class="input" type="text">
+                            <input id="input3b" class="input" type="text">
                             <input type="submit" value="Add">
                         </form>
-                        <ul class="body">
+                        <ul id="body3" class="body">
                          
                         </ul>
                     </div>
@@ -136,73 +140,219 @@
                     <a><i class="fa fa-circle invert" id=""></i></a>
                 </div>
                 <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Project Name: <input type="text" name="project" size="35"></h4>
-                    </div>
-                    <div class="timeline-body">
-                        <form>
-                            <label>Enter task:</label>
-                            <input class="input" type="text">
-                            <input type="submit" value="Add">
-                        </form>
-                        <ul class="body">
-                         
-                        </ul>
-                    </div>
-                    <div class="timeline-footer">
-                        <fieldset>
-                            <!-- <legend>Start and End date of project</legend> -->
-                        
-                            <div>
-                                <label for="end">Deadline</label>
-                                <input type="date" id="end" name="trip"
-                                     
-                                       min="2018-01-01" max=""/ >
+                        <div class="timeline-heading">
+                            <h4>Project Name:
+                            </h4>
+                            <div id="input4" class="inputs"><input type="text" name="project" size="35" id="project4" class="projects">
                             </div>
-                        
-                        </fieldset>
+                            <div id="space4"> <button id="submit4" class="submits">Submit Name</button></div>
+                        </div> <br><br><br><br><br> 
+                        <div class="timeline-body">
+                            <form id="form4">
+                                <label>Enter task:</label>
+                                <input id="input4b" class="input" type="text">
+                                <input type="submit" value="Add">
+                            </form>
+                            <ul id="body4" class="body">
+                             
+                            </ul>
+                        </div>
+                        <div class="timeline-footer">
+                            <fieldset>
+                                <!-- <legend>Start and End date of project</legend> -->
+                            
+                                <div>
+                                    <label for="end">Deadline</label>
+                                    <input type="date" id="end" name="trip"
+                                         
+                                           min="2018-01-01" max=""/ >
+                                </div>
+                            
+                            </fieldset>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
             
             <li>
-                <div class="timeline-badge">
-                    <a><i class="fa fa-circle" id=""></i></a>
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4>Project Name: <input type="text" name="project" size="35"></h4>
-                    </div>
-                    <div class="timeline-body">
-                        <form>
-                            <label>Enter task:</label>
-                            <input class="input" type="text">
-                            <input type="submit" value="Add">
-                        </form>
-                        <ul class="body">
-                         
-                        </ul>
-                    </div>
-                    <div class="timeline-footer">
-                        <fieldset>
-                            <!-- <legend>Start and End date of project</legend> -->
-                        
-                            <div>
-                                <label for="end">Deadline</label>
-                                <input type="date" id="end" name="trip"
-                                     
-                                       min="2018-01-01" max=""/ >
+                    <li>
+                            <div class="timeline-badge">
+                                <a><i class="fa fa-circle" id=""></i></a>
                             </div>
-                        
-                        </fieldset>
-                    </div>
-                </div>
-            </li>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>Project Name:
+                                    </h4>
+                                    <div id="input5" class="inputs"><input type="text" name="project" size="35" id="project5" class="projects">
+                                    </div>
+                                    <div id="space5"> <button id="submit5" class="submits">Submit Name</button></div>
+                                </div> <br> <br> <br><br><br>
+                                <div class="timeline-body">
+                                    <form id="form5">
+                                        <label>Enter task:</label>
+                                        <input id="input5b" class="input" type="text">
+                                        <input type="submit" value="Add">
+                                    </form>
+                                    <ul id="body5" class="body">
+                                     
+                                    </ul>
+                                </div>
+                                <div class="timeline-footer">
+                                    <fieldset>
+                                        <!-- <legend>Start and End date of project</legend> -->
+                                    
+                                        <div>
+                                            <label for="end">Deadline</label>
+                                            <input type="date" id="end" name="trip"
+                                                 
+                                                   min="2018-01-01" max=""/ >
+                                        </div>
+                                    
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </li>
             
             
         </ul>
- 
-</body>
+        
+
+<script>
    
-    
+
+    function submitProject() {
+        $(".timeline-heading").append(projectName);
+        input.removeChild()
+    }
+
+// tasks
+  $(document).ready(function($) {
+    $("#form1").submit(function() {
+        if ($("#input1b").val() !== '') {
+            var newTask1 = $('#input1b').val();
+            var newLi1 = $("<li>" + newTask1 + "</li>" + "<button class='completed'>Completed</button>");
+          
+            $("#body1").prepend(newLi1); // To put the new task at the top of the list
+            $(".input").val('');
+            return false; // So the change persists
+        }
+    });
+    // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
+
+       $("#form2").submit(function() {
+        if ($("#input2b").val() !== '') {
+            var newTask2 = $('#input2b').val();
+            var newLi2 = $("<li>" + newTask2 + "</li>" + "<button class='completed'>Completed</button>");
+          
+            $("#body2").prepend(newLi2); // To put the new task at the top of the list
+            $(".input").val('');
+            return false; // So the change persists
+        }
+    });
+
+       $("#form3").submit(function() {
+        if ($("#input3b").val() !== '') {
+            var newTask3 = $('#input3b').val();
+            var newLi3 = $("<li>" + newTask3 + "</li>" + "<button class='completed'>Completed</button>");
+          
+            $("#body3").prepend(newLi3); // To put the new task at the top of the list
+            $(".input").val('');
+            return false; // So the change persists
+        }
+    });
+
+    $("#form4").submit(function() {
+        if ($("#input4b").val() !== '') {
+            var newTask4 = $('#input4b').val();
+            var newLi4 = $("<li>" + newTask4 + "</li>" + "<button class='completed'>Completed</button>");
+          
+            $("#body4").prepend(newLi4); // To put the new task at the top of the list
+            $(".input").val('');
+            return false; // So the change persists
+        }
+    });
+
+    $("#form5").submit(function() {
+        if ($("#input5b").val() !== '') {
+            var newTask5 = $('#input5b').val();
+            var newLi5 = $("<li>" + newTask5 + "</li>" + "<button class='completed'>Completed</button>");
+          
+            $("#body5").prepend(newLi5); // To put the new task at the top of the list
+            $(".input").val('');
+            return false; // So the change persists
+        }
+    });
+
+});
+
+// set project name
+ $("#submit1").click(function(){
+    var projectName = $("#project1").val();
+    var input = document.getElementById("project1")
+        $("#input1").append("   " + " "+ projectName + "<br>" + "<br>" +"<br>");
+        $("#input1").css("padding", "10px");
+        $("#input1").css("float", "clear");
+        $("#project1").remove();
+        $("#submit1").remove();
+        $("#input_space").append("<br><br>")
+
+
+ });
+
+ $("#submit2").click(function(){
+    var projectName = $("#project2").val();
+    var input = document.getElementById("project2")
+        $("#input2").append("   " + " "+ projectName + "<br>" + "<br>" +"<br>");
+        $("#input2").css("padding", "10px");
+        $("#input2").css("float", "clear");
+        $("#project2").remove();
+        $("#submit2").remove();
+        $("#input_space").append("<br><br>")
+
+
+ });
+
+ $("#submit3").click(function(){
+    var projectName = $("#project3").val();
+    var input = document.getElementById("project3")
+        $("#input3").append("   " + " "+ projectName + "<br>" + "<br>" +"<br>");
+        $("#input3").css("padding", "10px");
+        $("#input3").css("float", "clear");
+        $("#project3").remove();
+        $("#submit3").remove();
+        $("#input_space").append("<br><br>")
+
+
+ });
+
+ $("#submit4").click(function(){
+    var projectName = $("#project4").val();
+    var input = document.getElementById("project4")
+        $("#input4").append("   " + " "+ projectName + "<br>" + "<br>" +"<br>");
+        $("#input4").css("padding", "10px");
+        $("#input4").css("float", "clear");
+        $("#project4").remove();
+        $("#submit4").remove();
+        $("#input_space").append("<br><br>")
+
+
+ });
+
+ $("#submit5").click(function(){
+    var projectName = $("#project5").val();
+    var input = document.getElementById("project5")
+        $("#input5").append("   " + " "+ projectName + "<br>" + "<br>" +"<br>");
+        $("#input5").css("padding", "10px");
+        $("#input5").css("float", "clear");
+        $("#project5").remove();
+        $("#submit5").remove();
+        $("#input_space").append("<br><br>")
+
+
+ });
+ 
+
+
+</script>
+</body>
+</html>
 </html>
