@@ -4,7 +4,7 @@ body {
 }
 
 .body {
-  margin: 50px;
+  margin: 2px;
 }
 
 h4 {
@@ -13,7 +13,7 @@ h4 {
 }
 
 .projects {
-  width: 250px; 
+  width: 220px; 
 }
 
 .timeline-panel {
@@ -52,6 +52,11 @@ h4 {
   color: white;
   background-color: red;
   padding: 10px;
+}
+
+.deadlinesubmits {
+  color: white;
+  background-color: red;
 }
 
 .completed {
