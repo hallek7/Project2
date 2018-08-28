@@ -86,35 +86,35 @@ $(document).ready(function() {
         headers: {
           "Content-Type": "application/json"
         },
-        type: "POST",
+        type: "PUT",
         url: "api/timeline",
         data: JSON.stringify(Name1)
       }).then((results) => {
         console.log(results);
       });
 
-    //Assigning variables to button id
-    var $add = $("#add");
-    //setting up on click events
-    $add.on("click",(e) => {
-      e.preventDefault()
-      // ($project_name);
+    // //Assigning variables to button id
+    // var $add = $("#add");
+    // //setting up on click events
+    // $add.on("click",(e) => {
+    //   e.preventDefault()
+    //   // ($project_name);
 
-      var task1 ={
-        task_body: $input1b.val(),
-      };
-      console.log(task1);
+    //   var task1 ={
+    //     task_body: $input1b.val(),
+    //   };
+    //   console.log(task1);
 
-      $.ajax({
-        method: "POST",
-        url: "api/timeline",
-        data: JSON.stringify(task1),
-      })
-      .then((results) => {
-        console.log(results);
-      });
+    //   $.ajax({
+    //     method: "POST",
+    //     url: "api/timeline",
+    //     data: JSON.stringify(task1),
+    //   })
+    //   .then((results) => {
+    //     console.log(results);
+    //   });
   
-    });
+    // });
 
       //Assigning variables to button id
       var $submitdate1 = $("#submitdate1");

@@ -36,75 +36,56 @@ module.exports = function(app) {
           console.log("we found user in db");
         }
         else {alert("email or password doesnot exist.Please signup first.")}
-        //   console.log(dbClient.length);
-        //   console.log(dbClient);
-        // // We have access to the new todo as an argument inside of the callback function
-        //   res.json(dbClient);
+        
       })
       .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
   });
 
-
-  app.post("/api/timeline", function(req, res) {
+  app.put("/api/timeline", function(req, res) {
     console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
     db.client
-      .create({
+      .update({
+        email: req.body.email,
+        passkey: req.body.passkey,
         project_name: req.body.project_name,
         task_body: req.body.task_body,
         task_date: req.body.task_date,
 
-      })
-      .then(function(dbClient) {
-        // We have access to the new todo as an argument inside of the callback function
+      }, {
+        where: {
+          email: req.body.email,
+        }
+      }).then(function(dbClient) {
         res.json(dbClient);
       })
       .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
   });
 
-  // app.get("/api/timeline/:id", function(req, res) {
-  //   db.Author.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbclient) {
-  //     res.json(db);
-  //   });
-};
+  app.get("/api/timeline", function(req, res) {
+    db.client.findAll({}).then(function(dbclient) {
+      res.json(dbclient);
+    });
+  });
 
-  // app.post("/api/timeline", function(req, res) {
-  //   console.log(req.body);
-  //   // create takes an argument of an object describing the item we want to
-  //   // insert into our table. In this case we just we pass in an object with a text
-  //   // and complete property (req.body)
+  // app.get("/api/timeline/:id", function(req,res) {
   //   db.client
-  //     .create({
-  //       task_body: req.body.task_body,
-
-  //     })
-  //     .then(function(dbClient) {
-  //       // We have access to the new todo as an argument inside of the callback function
-  //       res.json(dbClient);
-  //     })
-  //     .catch(function(err) {
-  //       // Whenever a validation or flag fails, an error is thrown
-  //       // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-  //       res.json(err);
+  //     .findAll({
+  //       include: [{
+  //         model: client,
+  //         where: {id: req.params.id }
+  //       }]
+  //     }).then(function(dbclient) {
+  //       res.json(db);
   //     });
   // });
-
-
-
+  
+ 
+};
+ 
 //   // Get all examples
 //   app.get("/api/examples", function(req, res) {
 //     db.Example.findAll({}).then(function(dbExamples) {

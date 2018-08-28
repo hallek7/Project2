@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD
-  background-color: lightblue;
-=======
-  background-color: white;
->>>>>>> 568c9e4d0c468144ce9caf3cb4261f7bdfdf5c05
+
   font-family: 'Abel', sans-serif;
 }
 
@@ -25,15 +21,16 @@ h4 {
 }
 
 .jumbotron {
-  background: url("logowhite.jpeg");
+  background: url("titaniclogo.jpg");
   background-repeat: no-repeat;
   background-size: 600px 200px;
   background-position: center;
   text-align: center;
+
 }
 
 .jumbotron:hover {
-  background: url("logoanimation.gif");
+  background: url("titaniclogo.gif");
   background-repeat: no-repeat;
   background-size: 600px 200px;
   background-position: center;
@@ -115,7 +112,7 @@ h4 {
 .timeline > li > .timeline-panel {
   width: 95%;
   float: left;
-  border: 1px solid #d4d4d4;
+  border: 2px solid #410000;
   /*border-radius: 2px;*/
   /*padding: 20px;*/
   position: relative;
@@ -201,7 +198,7 @@ h4 {
 }
 .timeline-footer{
     padding:20px;
-    background-color: gold;
+    background-color: rgb(110, 105, 105);
 }
 .timeline-footer > a{
     cursor: pointer;
@@ -351,7 +348,7 @@ h4 {
 }
 
 input[type='submit'] {
-  background-color: red;
+  background-color: grey;
   border: 0;
   color: white;
   padding: 5px 10px;
