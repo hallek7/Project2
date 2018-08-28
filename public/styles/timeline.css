@@ -1,14 +1,10 @@
 body {
-<<<<<<< HEAD
-  background-color: lightblue;
-=======
   background-color: white;
->>>>>>> 568c9e4d0c468144ce9caf3cb4261f7bdfdf5c05
   font-family: 'Abel', sans-serif;
 }
 
 .body {
-  margin: 50px;
+  margin: 2px;
 }
 
 h4 {
@@ -17,7 +13,7 @@ h4 {
 }
 
 .projects {
-  width: 250px; 
+  width: 220px; 
 }
 
 .timeline-panel {
@@ -58,6 +54,11 @@ h4 {
   padding: 10px;
 }
 
+.deadlinesubmits {
+  color: white;
+  background-color: red;
+}
+
 .completed {
   color: white;
   background-color: red;
@@ -86,7 +87,6 @@ h4 {
   width: 50%;
   float: left;
   clear: left;
-  /* background-color:white;  */
   background-color: white; 
 }
 .timeline > li:before,

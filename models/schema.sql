@@ -1,4 +1,1 @@
-DROP DATABASE IF EXISTS Taskdb;
-CREATE DATABASE Taskdb;
-
-
+SELECT * FROM testdb.examples;
