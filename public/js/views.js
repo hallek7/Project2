@@ -140,14 +140,6 @@ $(document).ready(function() {
       });
 
 
-
-
-
-
-
-
-
-
 // sean's update
 function submitProject() {
   $(".timeline-heading").append(projectName);
