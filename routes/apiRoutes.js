@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // POST route for saving a new user
   app.post("/api/data", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
@@ -31,69 +32,60 @@ module.exports = function(app) {
         }
       })
       .then(function(dbClient) {
-        //if length of dbclient == 1 {
-        //we found user in db
-        // }
-        // else {no match}
-        //   console.log(dbClient.length);
-        //   console.log(dbClient);
-        // // We have access to the new todo as an argument inside of the callback function
-        //   res.json(dbClient);
+        if (dbClient.length === 1) {
+          console.log("we found user in db");
+        }
+        else {alert("email or password doesnot exist.Please signup first.")}
+        
       })
       .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
   });
 
-
-  app.post("/api/timeline", function(req, res) {
+  app.put("/api/timeline", function(req, res) {
     console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
     db.client
-      .create({
+      .update({
+        email: req.body.email,
+        passkey: req.body.passkey,
         project_name: req.body.project_name,
-
-      })
-      .then(function(dbClient) {
-        // We have access to the new todo as an argument inside of the callback function
-        res.json(dbClient);
-      })
-      .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-        res.json(err);
-      });
-  });
-
-
-
-  app.post("/api/timeline", function(req, res) {
-    console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.client
-      .create({
         task_body: req.body.task_body,
+        task_date: req.body.task_date,
 
-      })
-      .then(function(dbClient) {
-        // We have access to the new todo as an argument inside of the callback function
+      }, {
+        where: {
+          email: req.body.email,
+        }
+      }).then(function(dbClient) {
         res.json(dbClient);
       })
       .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
         res.json(err);
       });
   });
+
+  app.get("/api/timeline", function(req, res) {
+    db.client.findAll({}).then(function(dbclient) {
+      res.json(dbclient);
+    });
+  });
+
+  // app.get("/api/timeline/:id", function(req,res) {
+  //   db.client
+  //     .findAll({
+  //       include: [{
+  //         model: client,
+  //         where: {id: req.params.id }
+  //       }]
+  //     }).then(function(dbclient) {
+  //       res.json(db);
+  //     });
+  // });
+  
+ 
 };
-
-
+ 
 //   // Get all examples
 //   app.get("/api/examples", function(req, res) {
 //     db.Example.findAll({}).then(function(dbExamples) {
@@ -119,16 +111,14 @@ module.exports = function(app) {
 
 
 Collapse 
-
-Sean Levine1:17 PM
-New Updates:
+ 
 
 CSS: https://gist.github.com/Ghostmouth/320bfefe0e9b28464dc169a06edb7f42
 
 HTML: https://gist.github.com/Ghostmouth/d028eae907ace3f13c38bbaaed72a14c
 new messages
 
-sabeen1:17 PM
+ 
 view.js 
 
 $(document).ready(function() {

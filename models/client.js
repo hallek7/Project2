@@ -4,23 +4,21 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       // AllowNull is a flag that restricts an from being entered if it doesn't
       // have a text value
-      allowNull: false
+      allowNull: true
     },
     passkey: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     
     project_name:{
       type: DataTypes.STRING,
-      allowNull: false
     },
-    task: {
-      type: DataTypes.INTEGER,
-    },
-    body:{
-      type:DataTypes.TEXT,
+
+    task_body:{
+      type:DataTypes.STRING,
     }, 
+
     task_date: {
       type:DataTypes.DATE,
     }

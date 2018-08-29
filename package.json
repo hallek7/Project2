@@ -1,5 +1,5 @@
 {
-  "name": "Titanic-float-none",
+  "name": "titanic-float-none",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -17,6 +17,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
+    "nodemon": "^1.18.3",
     "path": "^0.12.7",
     "sequelize": "^4.38.0"
   },
@@ -28,5 +29,17 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hallek7/Titanic-float-none.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/hallek7/Titanic-float-none/issues"
+  },
+  "homepage": "https://github.com/hallek7/Titanic-float-none#readme"
 }
